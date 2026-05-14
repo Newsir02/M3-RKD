@@ -6,7 +6,7 @@ DATASET_NAME="ogbg-molbace"  # Change this to your desired dataset (e.g., "ogbg-
 
 # Teacher configuration (make sure this matches the teacher model you trained)
 TEACHER_MODEL="GIN"
-TEA_LAYERS=
+TEA_LAYERS=4
 TEA_HIDDEN_DIM=128
 TEACHER_PATH="weight\ogbg-molbace_best_model_run4.pth"
 
