@@ -1,0 +1,452 @@
+Configuration: {'dataset_name': 'ogbg-molbace', 'teacher_model': 'GIN', 'tea_layers': 4, 'tea_hidden_dim': 128, 'dropout_tea': 0.5, 'tea_pool_type': 'add', 'teacher_path': 'output-temp/GIN/ogbg-molbace_hidden128_layers4_dropout0.5_pooladd/run4/ogbg-molbace_best_model_run4.pth', 'student_model': 'MLP', 'stu_layers': 3, 'stu_hidden_dim': 128, 'dropout_stu': 0.5, 'stu_pool_type': 'mean', 'proj_dim': 128, 'batch_size': 32, 'learning_rate': 0.001, 'weight_decay': 0.0005, 'epochs': 1000, 'patience': 50, 'pe_dim': 8, 'add_pe': False, 'add_spd': True, 'add_core': True, 'add_spectral': True, 'heads': 8, 'attn_dropout': 0.2, 'subset_ratio': 1.0, 'n_clusters': 5, 'task_weight': 1.0, 'kl_weight': 1.0, 'core_nce_weight': 1.0, 'subgraph_weight': 0.01, 'topk_weight': 0.1, 'temperature': 0.1, 'topo_weight': 0.0, 'path_weight': 0.0, 'warmup_ratio': 0.2, 'min_weight': 1.0, 'threshold': 0.05, 'kl_temperature': 1.0, 'sub_temperature': 0.1, 'rank_temperature': 0.1, 'core_temperature': 2.0, 'k': 8, 'runs': 10, 'iteration': 2, 'device': 0, 'seeds': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+Device: cuda:0
+Log file: MLPlog-ogbg-molbace/training_log_Experiment_M3-RKD-k_ogbg-molbace_GIN_128_4_0.5iteration2_MLP_3_0.5_addpeFalse/pool-8_mean_kl1.0_core1.0_sub0.01_topk0.1_1.0_0.1_0.1_2.0klT1.0_subT0.1_rankT0.1_coreT2.0.txt
+Output directory: ./Expriment_output-K/MLPDistillationOGB-ogbg-molbace/mean_ogbg-molbace_GIN_128_4_iteration2_MLP_1283_0.5/KL1.0_Core1.0_Sub0.01_TopK0.1
+
+========================================
+开始第 1/10 次运行 | Seed: 0
+========================================
+加载数据集完成
+数据集信息:
+  - 图数量: 1513
+  - 任务数: 1
+  - 节点特征维度: 9
+  - 平均节点数: 34.1
+成功加载教师模型: output-temp/GIN/ogbg-molbace_hidden128_layers4_dropout0.5_pooladd/run4/ogbg-molbace_best_model_run4.pth
+教师参数量: 422,149
+学生参数量: 18,433
+
+开始KD训练...
+Run 1 Epoch   1 | Total: 1.6607 | Task: 0.6283 | KL: 0.6232 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.2489 | SubG: 0.2301 | TopK: 1.5799 | Val Metric: 0.5996 | 
+  >>> New Best Val Acc: 0.5996 (Saved)
+Run 1 Epoch   2 | Total: 1.5532 | Task: 0.5909 | KL: 0.5955 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.2218 | SubG: 0.2294 | TopK: 1.4268 | Val Metric: 0.6214 | 
+  >>> New Best Val Acc: 0.6214 (Saved)
+Run 1 Epoch  10 | Total: 1.4655 | Task: 0.5702 | KL: 0.5753 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1975 | SubG: 0.2094 | TopK: 1.2043 | Val Metric: 0.6366 | 
+  >>> New Best Val Acc: 0.6366 (Saved)
+Run 1 Epoch  20 | Total: 1.3950 | Task: 0.5455 | KL: 0.5600 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1924 | SubG: 0.1779 | TopK: 0.9535 | Val Metric: 0.5954 | 
+Run 1 Epoch  25 | Total: 1.3631 | Task: 0.5421 | KL: 0.5540 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1869 | SubG: 0.1621 | TopK: 0.7843 | Val Metric: 0.6573 | 
+  >>> New Best Val Acc: 0.6573 (Saved)
+Run 1 Epoch  30 | Total: 1.3389 | Task: 0.5389 | KL: 0.5498 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1841 | SubG: 0.1497 | TopK: 0.6460 | Val Metric: 0.5586 | 
+Run 1 Epoch  39 | Total: 1.3172 | Task: 0.5265 | KL: 0.5532 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1812 | SubG: 0.1408 | TopK: 0.5496 | Val Metric: 0.6683 | 
+  >>> New Best Val Acc: 0.6683 (Saved)
+Run 1 Epoch  40 | Total: 1.3095 | Task: 0.5267 | KL: 0.5488 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1791 | SubG: 0.1409 | TopK: 0.5350 | Val Metric: 0.6452 | 
+Run 1 Epoch  50 | Total: 1.2765 | Task: 0.5130 | KL: 0.5379 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1753 | SubG: 0.1405 | TopK: 0.4882 | Val Metric: 0.6335 | 
+Run 1 Epoch  60 | Total: 1.2768 | Task: 0.5139 | KL: 0.5441 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1706 | SubG: 0.1430 | TopK: 0.4674 | Val Metric: 0.6416 | 
+Run 1 Epoch  70 | Total: 1.2663 | Task: 0.5136 | KL: 0.5399 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1663 | SubG: 0.1468 | TopK: 0.4506 | Val Metric: 0.5982 | 
+Run 1 Epoch  80 | Total: 1.2581 | Task: 0.5125 | KL: 0.5359 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1644 | SubG: 0.1483 | TopK: 0.4377 | Val Metric: 0.6178 | 
+
+早停触发！在第 89 轮停止训练 (Best Val: 0.6683)
+训练完成! 最佳验证: 0.6683 (epoch 39), 用时: 435.57s
+测试 Metric: 0.8223
+训练历史保存路径: ./Expriment_output-K/MLPDistillationOGB-ogbg-molbace/mean_ogbg-molbace_GIN_128_4_iteration2_MLP_1283_0.5/KL1.0_Core1.0_Sub0.01_TopK0.1/run_seed0/training_history.csv
+最佳模型权重保存路径: ./Expriment_output-K/MLPDistillationOGB-ogbg-molbace/mean_ogbg-molbace_GIN_128_4_iteration2_MLP_1283_0.5/KL1.0_Core1.0_Sub0.01_TopK0.1/run_seed0/best_model.pth
+
+========================================
+开始第 2/10 次运行 | Seed: 1
+========================================
+加载数据集完成
+数据集信息:
+  - 图数量: 1513
+  - 任务数: 1
+  - 节点特征维度: 9
+  - 平均节点数: 34.1
+成功加载教师模型: output-temp/GIN/ogbg-molbace_hidden128_layers4_dropout0.5_pooladd/run4/ogbg-molbace_best_model_run4.pth
+教师参数量: 422,149
+学生参数量: 18,433
+
+开始KD训练...
+Run 2 Epoch   1 | Total: 1.6678 | Task: 0.6314 | KL: 0.6301 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.2483 | SubG: 0.2358 | TopK: 1.5570 | Val Metric: 0.5819 | 
+  >>> New Best Val Acc: 0.5819 (Saved)
+Run 2 Epoch   2 | Total: 1.5654 | Task: 0.6000 | KL: 0.5960 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.2253 | SubG: 0.2210 | TopK: 1.4199 | Val Metric: 0.6227 | 
+  >>> New Best Val Acc: 0.6227 (Saved)
+Run 2 Epoch   7 | Total: 1.4777 | Task: 0.5718 | KL: 0.5754 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1984 | SubG: 0.2132 | TopK: 1.2994 | Val Metric: 0.6372 | 
+  >>> New Best Val Acc: 0.6372 (Saved)
+Run 2 Epoch  10 | Total: 1.4720 | Task: 0.5663 | KL: 0.5726 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.2046 | SubG: 0.2105 | TopK: 1.2649 | Val Metric: 0.6161 | 
+Run 2 Epoch  12 | Total: 1.4382 | Task: 0.5508 | KL: 0.5644 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1983 | SubG: 0.2048 | TopK: 1.2267 | Val Metric: 0.6575 | 
+  >>> New Best Val Acc: 0.6575 (Saved)
+Run 2 Epoch  20 | Total: 1.3955 | Task: 0.5358 | KL: 0.5514 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1964 | SubG: 0.1852 | TopK: 1.1012 | Val Metric: 0.6299 | 
+Run 2 Epoch  30 | Total: 1.3390 | Task: 0.5385 | KL: 0.5471 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1853 | SubG: 0.1465 | TopK: 0.6652 | Val Metric: 0.5984 | 
+Run 2 Epoch  40 | Total: 1.3043 | Task: 0.5258 | KL: 0.5460 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1763 | SubG: 0.1441 | TopK: 0.5484 | Val Metric: 0.6227 | 
+Run 2 Epoch  50 | Total: 1.2799 | Task: 0.5239 | KL: 0.5363 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1692 | SubG: 0.1422 | TopK: 0.4909 | Val Metric: 0.6251 | 
+Run 2 Epoch  58 | Total: 1.2648 | Task: 0.5152 | KL: 0.5370 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1637 | SubG: 0.1429 | TopK: 0.4744 | Val Metric: 0.6703 | 
+  >>> New Best Val Acc: 0.6703 (Saved)
+Run 2 Epoch  60 | Total: 1.2807 | Task: 0.5258 | KL: 0.5397 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1665 | SubG: 0.1437 | TopK: 0.4726 | Val Metric: 0.6187 | 
+Run 2 Epoch  70 | Total: 1.2663 | Task: 0.5186 | KL: 0.5330 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1675 | SubG: 0.1465 | TopK: 0.4576 | Val Metric: 0.6332 | 
+Run 2 Epoch  80 | Total: 1.2517 | Task: 0.5072 | KL: 0.5361 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1627 | SubG: 0.1474 | TopK: 0.4422 | Val Metric: 0.5905 | 
+Run 2 Epoch  90 | Total: 1.2623 | Task: 0.5192 | KL: 0.5337 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1641 | SubG: 0.1514 | TopK: 0.4379 | Val Metric: 0.6313 | 
+Run 2 Epoch 100 | Total: 1.2502 | Task: 0.5065 | KL: 0.5344 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1648 | SubG: 0.1533 | TopK: 0.4293 | Val Metric: 0.5817 | 
+
+早停触发！在第 108 轮停止训练 (Best Val: 0.6703)
+训练完成! 最佳验证: 0.6703 (epoch 58), 用时: 545.62s
+测试 Metric: 0.7950
+训练历史保存路径: ./Expriment_output-K/MLPDistillationOGB-ogbg-molbace/mean_ogbg-molbace_GIN_128_4_iteration2_MLP_1283_0.5/KL1.0_Core1.0_Sub0.01_TopK0.1/run_seed1/training_history.csv
+最佳模型权重保存路径: ./Expriment_output-K/MLPDistillationOGB-ogbg-molbace/mean_ogbg-molbace_GIN_128_4_iteration2_MLP_1283_0.5/KL1.0_Core1.0_Sub0.01_TopK0.1/run_seed1/best_model.pth
+
+========================================
+开始第 3/10 次运行 | Seed: 2
+========================================
+加载数据集完成
+数据集信息:
+  - 图数量: 1513
+  - 任务数: 1
+  - 节点特征维度: 9
+  - 平均节点数: 34.1
+成功加载教师模型: output-temp/GIN/ogbg-molbace_hidden128_layers4_dropout0.5_pooladd/run4/ogbg-molbace_best_model_run4.pth
+教师参数量: 422,149
+学生参数量: 18,433
+
+开始KD训练...
+Run 3 Epoch   1 | Total: 1.6353 | Task: 0.6170 | KL: 0.6182 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.2434 | SubG: 0.2341 | TopK: 1.5429 | Val Metric: 0.5711 | 
+  >>> New Best Val Acc: 0.5711 (Saved)
+Run 3 Epoch   2 | Total: 1.5537 | Task: 0.5909 | KL: 0.5946 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.2250 | SubG: 0.2230 | TopK: 1.4103 | Val Metric: 0.6392 | 
+  >>> New Best Val Acc: 0.6392 (Saved)
+Run 3 Epoch  10 | Total: 1.4684 | Task: 0.5697 | KL: 0.5698 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.2062 | SubG: 0.2086 | TopK: 1.2063 | Val Metric: 0.6139 | 
+Run 3 Epoch  15 | Total: 1.4444 | Task: 0.5617 | KL: 0.5732 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.2003 | SubG: 0.1904 | TopK: 1.0743 | Val Metric: 0.6394 | 
+  >>> New Best Val Acc: 0.6394 (Saved)
+Run 3 Epoch  16 | Total: 1.4424 | Task: 0.5660 | KL: 0.5666 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.2028 | SubG: 0.1903 | TopK: 1.0516 | Val Metric: 0.6414 | 
+  >>> New Best Val Acc: 0.6414 (Saved)
+Run 3 Epoch  20 | Total: 1.4094 | Task: 0.5534 | KL: 0.5645 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1952 | SubG: 0.1818 | TopK: 0.9441 | Val Metric: 0.6033 | 
+Run 3 Epoch  26 | Total: 1.3708 | Task: 0.5445 | KL: 0.5564 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1893 | SubG: 0.1687 | TopK: 0.7897 | Val Metric: 0.6480 | 
+  >>> New Best Val Acc: 0.6480 (Saved)
+Run 3 Epoch  30 | Total: 1.3377 | Task: 0.5229 | KL: 0.5528 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1887 | SubG: 0.1599 | TopK: 0.7181 | Val Metric: 0.6526 | 
+  >>> New Best Val Acc: 0.6526 (Saved)
+Run 3 Epoch  40 | Total: 1.3126 | Task: 0.5306 | KL: 0.5458 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1811 | SubG: 0.1439 | TopK: 0.5364 | Val Metric: 0.6057 | 
+Run 3 Epoch  50 | Total: 1.2941 | Task: 0.5236 | KL: 0.5450 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1761 | SubG: 0.1425 | TopK: 0.4790 | Val Metric: 0.6163 | 
+Run 3 Epoch  60 | Total: 1.2743 | Task: 0.5184 | KL: 0.5396 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1683 | SubG: 0.1460 | TopK: 0.4651 | Val Metric: 0.6258 | 
+Run 3 Epoch  70 | Total: 1.2708 | Task: 0.5141 | KL: 0.5424 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1685 | SubG: 0.1471 | TopK: 0.4433 | Val Metric: 0.4830 | 
+Run 3 Epoch  80 | Total: 1.2652 | Task: 0.5161 | KL: 0.5384 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1656 | SubG: 0.1500 | TopK: 0.4357 | Val Metric: 0.5751 | 
+
+早停触发！在第 80 轮停止训练 (Best Val: 0.6526)
+训练完成! 最佳验证: 0.6526 (epoch 30), 用时: 412.43s
+测试 Metric: 0.7244
+训练历史保存路径: ./Expriment_output-K/MLPDistillationOGB-ogbg-molbace/mean_ogbg-molbace_GIN_128_4_iteration2_MLP_1283_0.5/KL1.0_Core1.0_Sub0.01_TopK0.1/run_seed2/training_history.csv
+最佳模型权重保存路径: ./Expriment_output-K/MLPDistillationOGB-ogbg-molbace/mean_ogbg-molbace_GIN_128_4_iteration2_MLP_1283_0.5/KL1.0_Core1.0_Sub0.01_TopK0.1/run_seed2/best_model.pth
+
+========================================
+开始第 4/10 次运行 | Seed: 3
+========================================
+加载数据集完成
+数据集信息:
+  - 图数量: 1513
+  - 任务数: 1
+  - 节点特征维度: 9
+  - 平均节点数: 34.1
+成功加载教师模型: output-temp/GIN/ogbg-molbace_hidden128_layers4_dropout0.5_pooladd/run4/ogbg-molbace_best_model_run4.pth
+教师参数量: 422,149
+学生参数量: 18,433
+
+开始KD训练...
+Run 4 Epoch   1 | Total: 1.6717 | Task: 0.6469 | KL: 0.6320 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.2330 | SubG: 0.2443 | TopK: 1.5741 | Val Metric: 0.5853 | 
+  >>> New Best Val Acc: 0.5853 (Saved)
+Run 4 Epoch   2 | Total: 1.5592 | Task: 0.5922 | KL: 0.5941 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.2239 | SubG: 0.2296 | TopK: 1.4669 | Val Metric: 0.5879 | 
+  >>> New Best Val Acc: 0.5879 (Saved)
+Run 4 Epoch   3 | Total: 1.5268 | Task: 0.5805 | KL: 0.5907 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.2136 | SubG: 0.2429 | TopK: 1.3957 | Val Metric: 0.5938 | 
+  >>> New Best Val Acc: 0.5938 (Saved)
+Run 4 Epoch   4 | Total: 1.5049 | Task: 0.5775 | KL: 0.5809 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.2090 | SubG: 0.2320 | TopK: 1.3532 | Val Metric: 0.6165 | 
+  >>> New Best Val Acc: 0.6165 (Saved)
+Run 4 Epoch   9 | Total: 1.4567 | Task: 0.5618 | KL: 0.5679 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.2019 | SubG: 0.2097 | TopK: 1.2308 | Val Metric: 0.6172 | 
+  >>> New Best Val Acc: 0.6172 (Saved)
+Run 4 Epoch  10 | Total: 1.4665 | Task: 0.5734 | KL: 0.5696 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.2022 | SubG: 0.2049 | TopK: 1.1925 | Val Metric: 0.6445 | 
+  >>> New Best Val Acc: 0.6445 (Saved)
+Run 4 Epoch  20 | Total: 1.3947 | Task: 0.5453 | KL: 0.5564 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1979 | SubG: 0.1733 | TopK: 0.9336 | Val Metric: 0.5929 | 
+Run 4 Epoch  25 | Total: 1.3687 | Task: 0.5477 | KL: 0.5550 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1873 | SubG: 0.1597 | TopK: 0.7708 | Val Metric: 0.6630 | 
+  >>> New Best Val Acc: 0.6630 (Saved)
+Run 4 Epoch  30 | Total: 1.3333 | Task: 0.5300 | KL: 0.5509 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1834 | SubG: 0.1508 | TopK: 0.6748 | Val Metric: 0.6297 | 
+Run 4 Epoch  40 | Total: 1.3191 | Task: 0.5392 | KL: 0.5457 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1766 | SubG: 0.1430 | TopK: 0.5611 | Val Metric: 0.6440 | 
+Run 4 Epoch  50 | Total: 1.3098 | Task: 0.5357 | KL: 0.5453 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1780 | SubG: 0.1404 | TopK: 0.4941 | Val Metric: 0.6205 | 
+Run 4 Epoch  60 | Total: 1.2902 | Task: 0.5312 | KL: 0.5462 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1658 | SubG: 0.1448 | TopK: 0.4554 | Val Metric: 0.6183 | 
+Run 4 Epoch  70 | Total: 1.2769 | Task: 0.5244 | KL: 0.5402 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1670 | SubG: 0.1485 | TopK: 0.4383 | Val Metric: 0.5864 | 
+
+早停触发！在第 75 轮停止训练 (Best Val: 0.6630)
+训练完成! 最佳验证: 0.6630 (epoch 25), 用时: 395.89s
+测试 Metric: 0.8124
+训练历史保存路径: ./Expriment_output-K/MLPDistillationOGB-ogbg-molbace/mean_ogbg-molbace_GIN_128_4_iteration2_MLP_1283_0.5/KL1.0_Core1.0_Sub0.01_TopK0.1/run_seed3/training_history.csv
+最佳模型权重保存路径: ./Expriment_output-K/MLPDistillationOGB-ogbg-molbace/mean_ogbg-molbace_GIN_128_4_iteration2_MLP_1283_0.5/KL1.0_Core1.0_Sub0.01_TopK0.1/run_seed3/best_model.pth
+
+========================================
+开始第 5/10 次运行 | Seed: 4
+========================================
+加载数据集完成
+数据集信息:
+  - 图数量: 1513
+  - 任务数: 1
+  - 节点特征维度: 9
+  - 平均节点数: 34.1
+成功加载教师模型: output-temp/GIN/ogbg-molbace_hidden128_layers4_dropout0.5_pooladd/run4/ogbg-molbace_best_model_run4.pth
+教师参数量: 422,149
+学生参数量: 18,433
+
+开始KD训练...
+Run 5 Epoch   1 | Total: 1.6584 | Task: 0.6330 | KL: 0.6274 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.2406 | SubG: 0.2285 | TopK: 1.5504 | Val Metric: 0.5555 | 
+  >>> New Best Val Acc: 0.5555 (Saved)
+Run 5 Epoch   2 | Total: 1.5534 | Task: 0.5956 | KL: 0.5926 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.2183 | SubG: 0.2220 | TopK: 1.4475 | Val Metric: 0.6260 | 
+  >>> New Best Val Acc: 0.6260 (Saved)
+Run 5 Epoch  10 | Total: 1.4581 | Task: 0.5596 | KL: 0.5719 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.2017 | SubG: 0.2087 | TopK: 1.2286 | Val Metric: 0.6273 | 
+  >>> New Best Val Acc: 0.6273 (Saved)
+Run 5 Epoch  16 | Total: 1.4239 | Task: 0.5522 | KL: 0.5642 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1942 | SubG: 0.1922 | TopK: 1.1134 | Val Metric: 0.6278 | 
+  >>> New Best Val Acc: 0.6278 (Saved)
+Run 5 Epoch  19 | Total: 1.4078 | Task: 0.5483 | KL: 0.5593 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1958 | SubG: 0.1804 | TopK: 1.0262 | Val Metric: 0.6315 | 
+  >>> New Best Val Acc: 0.6315 (Saved)
+Run 5 Epoch  20 | Total: 1.4059 | Task: 0.5512 | KL: 0.5611 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1913 | SubG: 0.1754 | TopK: 1.0064 | Val Metric: 0.5886 | 
+Run 5 Epoch  21 | Total: 1.3927 | Task: 0.5453 | KL: 0.5575 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1904 | SubG: 0.1730 | TopK: 0.9773 | Val Metric: 0.6495 | 
+  >>> New Best Val Acc: 0.6495 (Saved)
+Run 5 Epoch  30 | Total: 1.3394 | Task: 0.5295 | KL: 0.5551 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1865 | SubG: 0.1501 | TopK: 0.6671 | Val Metric: 0.6366 | 
+Run 5 Epoch  40 | Total: 1.2872 | Task: 0.5117 | KL: 0.5453 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1793 | SubG: 0.1415 | TopK: 0.4957 | Val Metric: 0.6258 | 
+Run 5 Epoch  44 | Total: 1.3078 | Task: 0.5323 | KL: 0.5479 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1786 | SubG: 0.1422 | TopK: 0.4758 | Val Metric: 0.6615 | 
+  >>> New Best Val Acc: 0.6615 (Saved)
+Run 5 Epoch  50 | Total: 1.2830 | Task: 0.5178 | KL: 0.5424 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1748 | SubG: 0.1423 | TopK: 0.4661 | Val Metric: 0.6108 | 
+Run 5 Epoch  60 | Total: 1.2656 | Task: 0.5121 | KL: 0.5380 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1694 | SubG: 0.1462 | TopK: 0.4464 | Val Metric: 0.6097 | 
+Run 5 Epoch  70 | Total: 1.2670 | Task: 0.5225 | KL: 0.5385 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1615 | SubG: 0.1482 | TopK: 0.4308 | Val Metric: 0.6392 | 
+Run 5 Epoch  80 | Total: 1.2454 | Task: 0.5017 | KL: 0.5363 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1628 | SubG: 0.1515 | TopK: 0.4301 | Val Metric: 0.5824 | 
+Run 5 Epoch  81 | Total: 1.2522 | Task: 0.5083 | KL: 0.5322 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1668 | SubG: 0.1519 | TopK: 0.4337 | Val Metric: 0.6641 | 
+  >>> New Best Val Acc: 0.6641 (Saved)
+Run 5 Epoch  90 | Total: 1.2492 | Task: 0.5098 | KL: 0.5355 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1597 | SubG: 0.1539 | TopK: 0.4270 | Val Metric: 0.6284 | 
+Run 5 Epoch 100 | Total: 1.2542 | Task: 0.5143 | KL: 0.5372 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1587 | SubG: 0.1558 | TopK: 0.4247 | Val Metric: 0.5546 | 
+Run 5 Epoch 104 | Total: 1.2563 | Task: 0.5125 | KL: 0.5390 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1609 | SubG: 0.1556 | TopK: 0.4233 | Val Metric: 0.6645 | 
+  >>> New Best Val Acc: 0.6645 (Saved)
+Run 5 Epoch 110 | Total: 1.2481 | Task: 0.5061 | KL: 0.5369 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1612 | SubG: 0.1566 | TopK: 0.4244 | Val Metric: 0.5463 | 
+Run 5 Epoch 120 | Total: 1.2406 | Task: 0.5050 | KL: 0.5323 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1592 | SubG: 0.1575 | TopK: 0.4249 | Val Metric: 0.6000 | 
+Run 5 Epoch 130 | Total: 1.2269 | Task: 0.4940 | KL: 0.5337 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1556 | SubG: 0.1580 | TopK: 0.4203 | Val Metric: 0.6200 | 
+Run 5 Epoch 140 | Total: 1.2297 | Task: 0.4932 | KL: 0.5336 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1595 | SubG: 0.1587 | TopK: 0.4192 | Val Metric: 0.6044 | 
+Run 5 Epoch 150 | Total: 1.2401 | Task: 0.5057 | KL: 0.5359 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1550 | SubG: 0.1587 | TopK: 0.4194 | Val Metric: 0.5615 | 
+
+早停触发！在第 154 轮停止训练 (Best Val: 0.6645)
+训练完成! 最佳验证: 0.6645 (epoch 104), 用时: 782.35s
+测试 Metric: 0.7630
+训练历史保存路径: ./Expriment_output-K/MLPDistillationOGB-ogbg-molbace/mean_ogbg-molbace_GIN_128_4_iteration2_MLP_1283_0.5/KL1.0_Core1.0_Sub0.01_TopK0.1/run_seed4/training_history.csv
+最佳模型权重保存路径: ./Expriment_output-K/MLPDistillationOGB-ogbg-molbace/mean_ogbg-molbace_GIN_128_4_iteration2_MLP_1283_0.5/KL1.0_Core1.0_Sub0.01_TopK0.1/run_seed4/best_model.pth
+
+========================================
+开始第 6/10 次运行 | Seed: 5
+========================================
+加载数据集完成
+数据集信息:
+  - 图数量: 1513
+  - 任务数: 1
+  - 节点特征维度: 9
+  - 平均节点数: 34.1
+成功加载教师模型: output-temp/GIN/ogbg-molbace_hidden128_layers4_dropout0.5_pooladd/run4/ogbg-molbace_best_model_run4.pth
+教师参数量: 422,149
+学生参数量: 18,433
+
+开始KD训练...
+Run 6 Epoch   1 | Total: 1.6474 | Task: 0.6211 | KL: 0.6172 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.2446 | SubG: 0.2515 | TopK: 1.6200 | Val Metric: 0.6194 | 
+  >>> New Best Val Acc: 0.6194 (Saved)
+Run 6 Epoch   2 | Total: 1.5750 | Task: 0.5909 | KL: 0.6013 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.2294 | SubG: 0.2452 | TopK: 1.5093 | Val Metric: 0.6218 | 
+  >>> New Best Val Acc: 0.6218 (Saved)
+Run 6 Epoch   3 | Total: 1.5418 | Task: 0.5884 | KL: 0.5902 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.2163 | SubG: 0.2439 | TopK: 1.4438 | Val Metric: 0.6480 | 
+  >>> New Best Val Acc: 0.6480 (Saved)
+Run 6 Epoch  10 | Total: 1.4684 | Task: 0.5689 | KL: 0.5726 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.2010 | SubG: 0.2129 | TopK: 1.2376 | Val Metric: 0.6033 | 
+Run 6 Epoch  20 | Total: 1.3959 | Task: 0.5402 | KL: 0.5614 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1923 | SubG: 0.1867 | TopK: 1.0006 | Val Metric: 0.6128 | 
+Run 6 Epoch  30 | Total: 1.3602 | Task: 0.5504 | KL: 0.5559 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1841 | SubG: 0.1514 | TopK: 0.6835 | Val Metric: 0.5978 | 
+Run 6 Epoch  36 | Total: 1.3165 | Task: 0.5295 | KL: 0.5470 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1809 | SubG: 0.1438 | TopK: 0.5766 | Val Metric: 0.6489 | 
+  >>> New Best Val Acc: 0.6489 (Saved)
+Run 6 Epoch  40 | Total: 1.3387 | Task: 0.5524 | KL: 0.5573 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1735 | SubG: 0.1416 | TopK: 0.5405 | Val Metric: 0.6077 | 
+Run 6 Epoch  48 | Total: 1.3009 | Task: 0.5337 | KL: 0.5416 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1739 | SubG: 0.1425 | TopK: 0.5025 | Val Metric: 0.6630 | 
+  >>> New Best Val Acc: 0.6630 (Saved)
+Run 6 Epoch  50 | Total: 1.2997 | Task: 0.5289 | KL: 0.5447 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1744 | SubG: 0.1428 | TopK: 0.5039 | Val Metric: 0.5778 | 
+Run 6 Epoch  60 | Total: 1.2705 | Task: 0.5169 | KL: 0.5354 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1679 | SubG: 0.1449 | TopK: 0.4889 | Val Metric: 0.5740 | 
+Run 6 Epoch  70 | Total: 1.2770 | Task: 0.5238 | KL: 0.5385 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1655 | SubG: 0.1486 | TopK: 0.4771 | Val Metric: 0.6194 | 
+Run 6 Epoch  80 | Total: 1.2523 | Task: 0.5059 | KL: 0.5321 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1671 | SubG: 0.1504 | TopK: 0.4565 | Val Metric: 0.5832 | 
+Run 6 Epoch  90 | Total: 1.2472 | Task: 0.5023 | KL: 0.5374 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1612 | SubG: 0.1516 | TopK: 0.4473 | Val Metric: 0.6374 | 
+
+早停触发！在第 98 轮停止训练 (Best Val: 0.6630)
+训练完成! 最佳验证: 0.6630 (epoch 48), 用时: 492.40s
+测试 Metric: 0.7677
+训练历史保存路径: ./Expriment_output-K/MLPDistillationOGB-ogbg-molbace/mean_ogbg-molbace_GIN_128_4_iteration2_MLP_1283_0.5/KL1.0_Core1.0_Sub0.01_TopK0.1/run_seed5/training_history.csv
+最佳模型权重保存路径: ./Expriment_output-K/MLPDistillationOGB-ogbg-molbace/mean_ogbg-molbace_GIN_128_4_iteration2_MLP_1283_0.5/KL1.0_Core1.0_Sub0.01_TopK0.1/run_seed5/best_model.pth
+
+========================================
+开始第 7/10 次运行 | Seed: 6
+========================================
+加载数据集完成
+数据集信息:
+  - 图数量: 1513
+  - 任务数: 1
+  - 节点特征维度: 9
+  - 平均节点数: 34.1
+成功加载教师模型: output-temp/GIN/ogbg-molbace_hidden128_layers4_dropout0.5_pooladd/run4/ogbg-molbace_best_model_run4.pth
+教师参数量: 422,149
+学生参数量: 18,433
+
+开始KD训练...
+Run 7 Epoch   1 | Total: 1.6354 | Task: 0.6195 | KL: 0.6219 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.2342 | SubG: 0.2364 | TopK: 1.5751 | Val Metric: 0.5899 | 
+  >>> New Best Val Acc: 0.5899 (Saved)
+Run 7 Epoch   2 | Total: 1.5694 | Task: 0.5954 | KL: 0.5998 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.2244 | SubG: 0.2329 | TopK: 1.4751 | Val Metric: 0.6073 | 
+  >>> New Best Val Acc: 0.6073 (Saved)
+Run 7 Epoch   5 | Total: 1.5086 | Task: 0.5848 | KL: 0.5798 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.2054 | SubG: 0.2328 | TopK: 1.3629 | Val Metric: 0.6209 | 
+  >>> New Best Val Acc: 0.6209 (Saved)
+Run 7 Epoch  10 | Total: 1.4649 | Task: 0.5693 | KL: 0.5725 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1987 | SubG: 0.2136 | TopK: 1.2227 | Val Metric: 0.6009 | 
+Run 7 Epoch  13 | Total: 1.4537 | Task: 0.5642 | KL: 0.5755 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1939 | SubG: 0.2065 | TopK: 1.1807 | Val Metric: 0.6238 | 
+  >>> New Best Val Acc: 0.6238 (Saved)
+Run 7 Epoch  16 | Total: 1.4450 | Task: 0.5654 | KL: 0.5686 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.2012 | SubG: 0.1980 | TopK: 1.0782 | Val Metric: 0.6293 | 
+  >>> New Best Val Acc: 0.6293 (Saved)
+Run 7 Epoch  20 | Total: 1.3864 | Task: 0.5421 | KL: 0.5602 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1890 | SubG: 0.1764 | TopK: 0.9327 | Val Metric: 0.6143 | 
+Run 7 Epoch  23 | Total: 1.3789 | Task: 0.5447 | KL: 0.5612 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1885 | SubG: 0.1672 | TopK: 0.8285 | Val Metric: 0.6302 | 
+  >>> New Best Val Acc: 0.6302 (Saved)
+Run 7 Epoch  26 | Total: 1.3483 | Task: 0.5351 | KL: 0.5526 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1871 | SubG: 0.1576 | TopK: 0.7190 | Val Metric: 0.6441 | 
+  >>> New Best Val Acc: 0.6441 (Saved)
+Run 7 Epoch  30 | Total: 1.3414 | Task: 0.5453 | KL: 0.5518 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1815 | SubG: 0.1479 | TopK: 0.6141 | Val Metric: 0.5956 | 
+Run 7 Epoch  32 | Total: 1.3399 | Task: 0.5400 | KL: 0.5580 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1832 | SubG: 0.1450 | TopK: 0.5719 | Val Metric: 0.6626 | 
+  >>> New Best Val Acc: 0.6626 (Saved)
+Run 7 Epoch  40 | Total: 1.3164 | Task: 0.5315 | KL: 0.5556 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1790 | SubG: 0.1417 | TopK: 0.4894 | Val Metric: 0.6366 | 
+Run 7 Epoch  50 | Total: 1.2879 | Task: 0.5267 | KL: 0.5450 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1691 | SubG: 0.1445 | TopK: 0.4560 | Val Metric: 0.6121 | 
+Run 7 Epoch  60 | Total: 1.2883 | Task: 0.5242 | KL: 0.5531 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1653 | SubG: 0.1467 | TopK: 0.4438 | Val Metric: 0.6555 | 
+Run 7 Epoch  70 | Total: 1.2787 | Task: 0.5224 | KL: 0.5430 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1677 | SubG: 0.1503 | TopK: 0.4403 | Val Metric: 0.6136 | 
+Run 7 Epoch  80 | Total: 1.2596 | Task: 0.5121 | KL: 0.5393 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1634 | SubG: 0.1521 | TopK: 0.4320 | Val Metric: 0.5797 | 
+
+早停触发！在第 82 轮停止训练 (Best Val: 0.6626)
+训练完成! 最佳验证: 0.6626 (epoch 32), 用时: 417.95s
+测试 Metric: 0.7606
+训练历史保存路径: ./Expriment_output-K/MLPDistillationOGB-ogbg-molbace/mean_ogbg-molbace_GIN_128_4_iteration2_MLP_1283_0.5/KL1.0_Core1.0_Sub0.01_TopK0.1/run_seed6/training_history.csv
+最佳模型权重保存路径: ./Expriment_output-K/MLPDistillationOGB-ogbg-molbace/mean_ogbg-molbace_GIN_128_4_iteration2_MLP_1283_0.5/KL1.0_Core1.0_Sub0.01_TopK0.1/run_seed6/best_model.pth
+
+========================================
+开始第 8/10 次运行 | Seed: 7
+========================================
+加载数据集完成
+数据集信息:
+  - 图数量: 1513
+  - 任务数: 1
+  - 节点特征维度: 9
+  - 平均节点数: 34.1
+成功加载教师模型: output-temp/GIN/ogbg-molbace_hidden128_layers4_dropout0.5_pooladd/run4/ogbg-molbace_best_model_run4.pth
+教师参数量: 422,149
+学生参数量: 18,433
+
+开始KD训练...
+Run 8 Epoch   1 | Total: 1.6336 | Task: 0.6189 | KL: 0.6244 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.2319 | SubG: 0.2361 | TopK: 1.5616 | Val Metric: 0.6244 | 
+  >>> New Best Val Acc: 0.6244 (Saved)
+Run 8 Epoch   3 | Total: 1.5358 | Task: 0.5913 | KL: 0.5926 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.2126 | SubG: 0.2302 | TopK: 1.3709 | Val Metric: 0.6262 | 
+  >>> New Best Val Acc: 0.6262 (Saved)
+Run 8 Epoch   8 | Total: 1.4700 | Task: 0.5590 | KL: 0.5765 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.2053 | SubG: 0.2148 | TopK: 1.2715 | Val Metric: 0.6264 | 
+  >>> New Best Val Acc: 0.6264 (Saved)
+Run 8 Epoch  10 | Total: 1.4548 | Task: 0.5598 | KL: 0.5671 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.2047 | SubG: 0.2092 | TopK: 1.2112 | Val Metric: 0.6344 | 
+  >>> New Best Val Acc: 0.6344 (Saved)
+Run 8 Epoch  20 | Total: 1.4299 | Task: 0.5653 | KL: 0.5681 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1945 | SubG: 0.1752 | TopK: 1.0025 | Val Metric: 0.5947 | 
+Run 8 Epoch  23 | Total: 1.4046 | Task: 0.5561 | KL: 0.5634 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1920 | SubG: 0.1671 | TopK: 0.9142 | Val Metric: 0.6381 | 
+  >>> New Best Val Acc: 0.6381 (Saved)
+Run 8 Epoch  30 | Total: 1.3437 | Task: 0.5297 | KL: 0.5510 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1856 | SubG: 0.1546 | TopK: 0.7588 | Val Metric: 0.5168 | 
+Run 8 Epoch  32 | Total: 1.3421 | Task: 0.5397 | KL: 0.5488 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1856 | SubG: 0.1498 | TopK: 0.6649 | Val Metric: 0.6414 | 
+  >>> New Best Val Acc: 0.6414 (Saved)
+Run 8 Epoch  40 | Total: 1.2932 | Task: 0.5235 | KL: 0.5396 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1799 | SubG: 0.1416 | TopK: 0.4885 | Val Metric: 0.5134 | 
+Run 8 Epoch  42 | Total: 1.3066 | Task: 0.5304 | KL: 0.5463 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1807 | SubG: 0.1410 | TopK: 0.4776 | Val Metric: 0.6570 | 
+  >>> New Best Val Acc: 0.6570 (Saved)
+Run 8 Epoch  50 | Total: 1.2737 | Task: 0.5128 | KL: 0.5394 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1762 | SubG: 0.1440 | TopK: 0.4387 | Val Metric: 0.6337 | 
+Run 8 Epoch  55 | Total: 1.2932 | Task: 0.5279 | KL: 0.5461 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1747 | SubG: 0.1462 | TopK: 0.4307 | Val Metric: 0.6586 | 
+  >>> New Best Val Acc: 0.6586 (Saved)
+Run 8 Epoch  60 | Total: 1.2829 | Task: 0.5283 | KL: 0.5413 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1689 | SubG: 0.1490 | TopK: 0.4288 | Val Metric: 0.5414 | 
+Run 8 Epoch  69 | Total: 1.2658 | Task: 0.5214 | KL: 0.5371 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1632 | SubG: 0.1518 | TopK: 0.4258 | Val Metric: 0.6670 | 
+  >>> New Best Val Acc: 0.6670 (Saved)
+Run 8 Epoch  70 | Total: 1.2631 | Task: 0.5176 | KL: 0.5364 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1656 | SubG: 0.1516 | TopK: 0.4198 | Val Metric: 0.5740 | 
+Run 8 Epoch  80 | Total: 1.2659 | Task: 0.5176 | KL: 0.5382 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1668 | SubG: 0.1529 | TopK: 0.4181 | Val Metric: 0.5802 | 
+Run 8 Epoch  90 | Total: 1.2582 | Task: 0.5138 | KL: 0.5362 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1646 | SubG: 0.1556 | TopK: 0.4205 | Val Metric: 0.6234 | 
+Run 8 Epoch 100 | Total: 1.2428 | Task: 0.5096 | KL: 0.5341 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1557 | SubG: 0.1566 | TopK: 0.4187 | Val Metric: 0.6093 | 
+Run 8 Epoch 101 | Total: 1.2458 | Task: 0.5052 | KL: 0.5353 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1620 | SubG: 0.1568 | TopK: 0.4176 | Val Metric: 0.6687 | 
+  >>> New Best Val Acc: 0.6687 (Saved)
+Run 8 Epoch 110 | Total: 1.2468 | Task: 0.5063 | KL: 0.5397 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1576 | SubG: 0.1580 | TopK: 0.4162 | Val Metric: 0.6302 | 
+Run 8 Epoch 120 | Total: 1.2450 | Task: 0.5089 | KL: 0.5333 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1592 | SubG: 0.1579 | TopK: 0.4209 | Val Metric: 0.6324 | 
+Run 8 Epoch 130 | Total: 1.2378 | Task: 0.5050 | KL: 0.5325 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1566 | SubG: 0.1585 | TopK: 0.4206 | Val Metric: 0.5989 | 
+Run 8 Epoch 140 | Total: 1.2307 | Task: 0.4997 | KL: 0.5324 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1551 | SubG: 0.1589 | TopK: 0.4181 | Val Metric: 0.5982 | 
+Run 8 Epoch 150 | Total: 1.2268 | Task: 0.4958 | KL: 0.5304 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1573 | SubG: 0.1586 | TopK: 0.4178 | Val Metric: 0.6341 | 
+
+早停触发！在第 151 轮停止训练 (Best Val: 0.6687)
+训练完成! 最佳验证: 0.6687 (epoch 101), 用时: 773.36s
+测试 Metric: 0.7804
+训练历史保存路径: ./Expriment_output-K/MLPDistillationOGB-ogbg-molbace/mean_ogbg-molbace_GIN_128_4_iteration2_MLP_1283_0.5/KL1.0_Core1.0_Sub0.01_TopK0.1/run_seed7/training_history.csv
+最佳模型权重保存路径: ./Expriment_output-K/MLPDistillationOGB-ogbg-molbace/mean_ogbg-molbace_GIN_128_4_iteration2_MLP_1283_0.5/KL1.0_Core1.0_Sub0.01_TopK0.1/run_seed7/best_model.pth
+
+========================================
+开始第 9/10 次运行 | Seed: 8
+========================================
+加载数据集完成
+数据集信息:
+  - 图数量: 1513
+  - 任务数: 1
+  - 节点特征维度: 9
+  - 平均节点数: 34.1
+成功加载教师模型: output-temp/GIN/ogbg-molbace_hidden128_layers4_dropout0.5_pooladd/run4/ogbg-molbace_best_model_run4.pth
+教师参数量: 422,149
+学生参数量: 18,433
+
+开始KD训练...
+Run 9 Epoch   1 | Total: 1.6257 | Task: 0.6176 | KL: 0.6158 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.2346 | SubG: 0.2489 | TopK: 1.5510 | Val Metric: 0.6139 | 
+  >>> New Best Val Acc: 0.6139 (Saved)
+Run 9 Epoch   2 | Total: 1.5282 | Task: 0.5835 | KL: 0.5856 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.2137 | SubG: 0.2275 | TopK: 1.4317 | Val Metric: 0.6297 | 
+  >>> New Best Val Acc: 0.6297 (Saved)
+Run 9 Epoch   3 | Total: 1.5166 | Task: 0.5773 | KL: 0.5849 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.2112 | SubG: 0.2348 | TopK: 1.4081 | Val Metric: 0.6326 | 
+  >>> New Best Val Acc: 0.6326 (Saved)
+Run 9 Epoch  10 | Total: 1.4518 | Task: 0.5507 | KL: 0.5701 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.2035 | SubG: 0.2068 | TopK: 1.2542 | Val Metric: 0.6200 | 
+Run 9 Epoch  20 | Total: 1.4187 | Task: 0.5636 | KL: 0.5643 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1918 | SubG: 0.1729 | TopK: 0.9728 | Val Metric: 0.6106 | 
+Run 9 Epoch  21 | Total: 1.3940 | Task: 0.5473 | KL: 0.5561 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1965 | SubG: 0.1663 | TopK: 0.9250 | Val Metric: 0.6403 | 
+  >>> New Best Val Acc: 0.6403 (Saved)
+Run 9 Epoch  25 | Total: 1.3596 | Task: 0.5383 | KL: 0.5519 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1894 | SubG: 0.1561 | TopK: 0.7838 | Val Metric: 0.6502 | 
+  >>> New Best Val Acc: 0.6502 (Saved)
+Run 9 Epoch  30 | Total: 1.3292 | Task: 0.5306 | KL: 0.5469 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1870 | SubG: 0.1421 | TopK: 0.6331 | Val Metric: 0.6412 | 
+Run 9 Epoch  40 | Total: 1.3012 | Task: 0.5300 | KL: 0.5454 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1735 | SubG: 0.1402 | TopK: 0.5088 | Val Metric: 0.6136 | 
+Run 9 Epoch  50 | Total: 1.2915 | Task: 0.5334 | KL: 0.5433 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1660 | SubG: 0.1432 | TopK: 0.4729 | Val Metric: 0.6310 | 
+Run 9 Epoch  60 | Total: 1.2617 | Task: 0.5107 | KL: 0.5390 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1666 | SubG: 0.1461 | TopK: 0.4406 | Val Metric: 0.5383 | 
+Run 9 Epoch  65 | Total: 1.2506 | Task: 0.5049 | KL: 0.5349 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1659 | SubG: 0.1479 | TopK: 0.4352 | Val Metric: 0.6590 | 
+  >>> New Best Val Acc: 0.6590 (Saved)
+Run 9 Epoch  70 | Total: 1.2610 | Task: 0.5160 | KL: 0.5352 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1652 | SubG: 0.1501 | TopK: 0.4320 | Val Metric: 0.6099 | 
+Run 9 Epoch  80 | Total: 1.2616 | Task: 0.5178 | KL: 0.5376 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1620 | SubG: 0.1524 | TopK: 0.4272 | Val Metric: 0.6077 | 
+Run 9 Epoch  90 | Total: 1.2439 | Task: 0.5070 | KL: 0.5328 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1602 | SubG: 0.1537 | TopK: 0.4231 | Val Metric: 0.6549 | 
+Run 9 Epoch 100 | Total: 1.2617 | Task: 0.5160 | KL: 0.5420 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1600 | SubG: 0.1559 | TopK: 0.4219 | Val Metric: 0.5595 | 
+Run 9 Epoch 110 | Total: 1.2696 | Task: 0.5180 | KL: 0.5440 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1638 | SubG: 0.1570 | TopK: 0.4224 | Val Metric: 0.6304 | 
+
+早停触发！在第 115 轮停止训练 (Best Val: 0.6590)
+训练完成! 最佳验证: 0.6590 (epoch 65), 用时: 591.32s
+测试 Metric: 0.7886
+训练历史保存路径: ./Expriment_output-K/MLPDistillationOGB-ogbg-molbace/mean_ogbg-molbace_GIN_128_4_iteration2_MLP_1283_0.5/KL1.0_Core1.0_Sub0.01_TopK0.1/run_seed8/training_history.csv
+最佳模型权重保存路径: ./Expriment_output-K/MLPDistillationOGB-ogbg-molbace/mean_ogbg-molbace_GIN_128_4_iteration2_MLP_1283_0.5/KL1.0_Core1.0_Sub0.01_TopK0.1/run_seed8/best_model.pth
+
+========================================
+开始第 10/10 次运行 | Seed: 9
+========================================
+加载数据集完成
+数据集信息:
+  - 图数量: 1513
+  - 任务数: 1
+  - 节点特征维度: 9
+  - 平均节点数: 34.1
+成功加载教师模型: output-temp/GIN/ogbg-molbace_hidden128_layers4_dropout0.5_pooladd/run4/ogbg-molbace_best_model_run4.pth
+教师参数量: 422,149
+学生参数量: 18,433
+
+开始KD训练...
+Run 10 Epoch   1 | Total: 1.6375 | Task: 0.6223 | KL: 0.6140 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.2455 | SubG: 0.2286 | TopK: 1.5338 | Val Metric: 0.5723 | 
+  >>> New Best Val Acc: 0.5723 (Saved)
+Run 10 Epoch   2 | Total: 1.5588 | Task: 0.5959 | KL: 0.5942 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.2212 | SubG: 0.2383 | TopK: 1.4510 | Val Metric: 0.6070 | 
+  >>> New Best Val Acc: 0.6070 (Saved)
+Run 10 Epoch   4 | Total: 1.5028 | Task: 0.5739 | KL: 0.5793 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.2107 | SubG: 0.2313 | TopK: 1.3664 | Val Metric: 0.6353 | 
+  >>> New Best Val Acc: 0.6353 (Saved)
+Run 10 Epoch   5 | Total: 1.4940 | Task: 0.5804 | KL: 0.5760 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.2023 | SubG: 0.2301 | TopK: 1.3299 | Val Metric: 0.6359 | 
+  >>> New Best Val Acc: 0.6359 (Saved)
+Run 10 Epoch  10 | Total: 1.4605 | Task: 0.5716 | KL: 0.5734 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1954 | SubG: 0.2081 | TopK: 1.1801 | Val Metric: 0.6147 | 
+Run 10 Epoch  20 | Total: 1.3890 | Task: 0.5433 | KL: 0.5610 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1878 | SubG: 0.1742 | TopK: 0.9515 | Val Metric: 0.5936 | 
+Run 10 Epoch  25 | Total: 1.3612 | Task: 0.5460 | KL: 0.5527 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1864 | SubG: 0.1552 | TopK: 0.7453 | Val Metric: 0.6364 | 
+  >>> New Best Val Acc: 0.6364 (Saved)
+Run 10 Epoch  27 | Total: 1.3456 | Task: 0.5388 | KL: 0.5492 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1869 | SubG: 0.1530 | TopK: 0.6929 | Val Metric: 0.6480 | 
+  >>> New Best Val Acc: 0.6480 (Saved)
+Run 10 Epoch  30 | Total: 1.3447 | Task: 0.5378 | KL: 0.5544 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1886 | SubG: 0.1461 | TopK: 0.6240 | Val Metric: 0.5963 | 
+Run 10 Epoch  40 | Total: 1.3064 | Task: 0.5278 | KL: 0.5442 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1787 | SubG: 0.1431 | TopK: 0.5427 | Val Metric: 0.6152 | 
+Run 10 Epoch  41 | Total: 1.3113 | Task: 0.5332 | KL: 0.5451 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1778 | SubG: 0.1411 | TopK: 0.5374 | Val Metric: 0.6548 | 
+  >>> New Best Val Acc: 0.6548 (Saved)
+Run 10 Epoch  50 | Total: 1.2793 | Task: 0.5133 | KL: 0.5416 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1708 | SubG: 0.1435 | TopK: 0.5214 | Val Metric: 0.6066 | 
+Run 10 Epoch  60 | Total: 1.2973 | Task: 0.5332 | KL: 0.5465 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1677 | SubG: 0.1437 | TopK: 0.4841 | Val Metric: 0.5614 | 
+Run 10 Epoch  70 | Total: 1.2547 | Task: 0.5116 | KL: 0.5277 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1671 | SubG: 0.1460 | TopK: 0.4676 | Val Metric: 0.6123 | 
+Run 10 Epoch  80 | Total: 1.2554 | Task: 0.5094 | KL: 0.5361 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1627 | SubG: 0.1478 | TopK: 0.4575 | Val Metric: 0.5918 | 
+Run 10 Epoch  90 | Total: 1.2543 | Task: 0.5049 | KL: 0.5377 | Topo: 0.0000 | Path: 0.0000 | CoreNCE: 0.1662 | SubG: 0.1506 | TopK: 0.4405 | Val Metric: 0.5971 | 
+
+早停触发！在第 91 轮停止训练 (Best Val: 0.6548)
+训练完成! 最佳验证: 0.6548 (epoch 41), 用时: 446.92s
+测试 Metric: 0.7713
+训练历史保存路径: ./Expriment_output-K/MLPDistillationOGB-ogbg-molbace/mean_ogbg-molbace_GIN_128_4_iteration2_MLP_1283_0.5/KL1.0_Core1.0_Sub0.01_TopK0.1/run_seed9/training_history.csv
+最佳模型权重保存路径: ./Expriment_output-K/MLPDistillationOGB-ogbg-molbace/mean_ogbg-molbace_GIN_128_4_iteration2_MLP_1283_0.5/KL1.0_Core1.0_Sub0.01_TopK0.1/run_seed9/best_model.pth
+
+############################################################
+最终结果汇总 (10 runs):
+Mean Test Metric: 0.7786 ± 0.0266
+详细 Metrics: [0.8222917753434186, 0.7949921752738655, 0.724395757259607, 0.8123804555729438, 0.7629977395235612, 0.7676925752043122, 0.7605633802816901, 0.7803860198226394, 0.7885585115632063, 0.7713441140671188]
+############################################################
+汇总结果已保存至: ./Expriment_output-K/MLPDistillationOGB-ogbg-molbace/ogbg-molbace_Base_mean_final_summary_results.csv
