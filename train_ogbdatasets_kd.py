@@ -176,7 +176,6 @@ def train_step(teacher_model, student_model, student_proj_head, teacher_proj_hea
 
     
     if config['path_weight'] > 0 or config['topo_weight'] > 0 or config['core_nce_weight'] > 0 or config['subgraph_weight'] > 0 or config['topk_weight'] > 0:
-        # A. 一次性计算整个 Batch 的投影 (利用 GPU 并行优势)
         # 这里的 t_node_emb 是 [Batch_Total_Nodes, Hidden_Dim]
         t_proj = teacher_proj_head(t_node_emb)
         s_proj = student_proj_head(s_node_emb)
@@ -191,9 +190,6 @@ def train_step(teacher_model, student_model, student_proj_head, teacher_proj_hea
                 )
         # C. 计算 Path Loss (批量随机游走)
         if config['path_weight'] > 0:
-            # 策略：为了避免对所有节点计算（太慢），我们从整个 Batch 中随机采样节点
-            # 比如采样 512 个节点作为 Center Node 进行游走
-            # 这种方式比逐图循环快得多，且无需 subgraph
             
             total_nodes = t_proj.shape[0]
             num_samples = min(512, total_nodes) # 你可以根据显存调整这个数字，越大越准
@@ -203,7 +199,6 @@ def train_step(teacher_model, student_model, student_proj_head, teacher_proj_hea
             node_indices = torch.randperm(total_nodes, device=device)[:num_samples]
             
             # 直接传入 batch.edge_index
-            # 因为 Batch 图是互不连通的，游走绝对不会跨图，逻辑完全正确
             path_loss = random_walk_distillation_loss(
                 t_graph_emb, 
                 s_graph_emb, 
@@ -238,18 +233,6 @@ def train_step(teacher_model, student_model, student_proj_head, teacher_proj_hea
                 temperature=config['sub_temperature']
             )
         if config.get('topk_weight', 0) > 0:
-        # 使用投影头后的特征计算 (推荐)，或者直接用 node_emb
-        # 推荐使用 proj 后的特征，因为 node_emb 要负责回归任务，空间可能受限
-            # t_feat = teacher_proj_head(t_node_emb)
-            # s_feat = student_proj_head(s_node_emb)
-        
-            # loss_topk = topk_ranking_distillation_loss(
-            #     t_feat, 
-            #     s_feat, 
-            #     batch.batch, 
-            #     k=8,  # ZINC 平均度数约为 2-3，但考虑到 2-hop，K=8 比较合适
-            #     temperature=config['temperature']
-            # )
             loss_topk = topk_ranking_distillation_loss(
                 t_node_emb,
                 s_node_emb, 
@@ -524,13 +507,6 @@ def train_and_evaluate_kd(config, device, base_output_dir, run_idx=0, train_load
     return test_metrics, best_val_metric, best_model_state, best_epoch
 
 
-# def set_seed(seed):
-#     random.seed(seed)
-#     np.random.seed(seed)
-#     torch.manual_seed(seed)
-#     torch.cuda.manual_seed_all(seed)
-#     torch.backends.cudnn.deterministic = True
-#     torch.backends.cudnn.benchmark = False
 def set_seed(seed):
     random.seed(seed)
     np.random.seed(seed)
